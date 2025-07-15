@@ -2,20 +2,25 @@
 
 namespace Database\Seeders;
 
+use App\Models\AntrianIjazah;
+use App\Models\Murid;
+use App\Models\RiwayatKelas;
 use App\Models\User;
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Nilai;
+
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
 {
-    /**
-     * Seed the application's database.
-     */
     public function run(): void
     {
         $this->call([
+            MuridsSeeder::class,
+            AntrianIjazahSeeder::class,
+            RiwayatKelasSeeder::class,
             RoleSeeder::class,
             UserSeeder::class,
+            NilaiSeeder::class,
         ]);
     }
 }
