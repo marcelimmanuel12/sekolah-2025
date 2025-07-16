@@ -24,7 +24,7 @@ class MuridsSeeder extends Seeder
             'email_murid' => 'siti@example.com',
             'nisn' => '20240801119',
             'jenis_kelamin' => 'Perempuan',
-            'kelas' => '7B',
+            'kelas' => '7A',
             'tanggal_lahir' => '2008-05-10',
             'status' => 'Aktif',
         ]);
@@ -34,7 +34,7 @@ class MuridsSeeder extends Seeder
             'email_murid' => 'anton@example.com',
             'nisn' => '20240801120',
             'jenis_kelamin' => 'Laki-laki',
-            'kelas' => '7B',
+            'kelas' => '7A',
             'tanggal_lahir' => '2008-05-10',
             'status' => 'Aktif',
         ]);

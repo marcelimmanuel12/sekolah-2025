@@ -15,7 +15,7 @@ return new class extends Migration {
             $table->enum('jenis_kelamin', ['Laki-laki', 'Perempuan'])->nullable();
             $table->string('kelas')->nullable();
             $table->date('tanggal_lahir')->nullable();
-            $table->enum('status', ['Aktif', 'Tidak Aktif'])->default('Aktif');
+            $table->enum('status', ['Aktif', 'Tidak Aktif', 'Lulus'])->default('Aktif');
             $table->timestamps();
         });
     }

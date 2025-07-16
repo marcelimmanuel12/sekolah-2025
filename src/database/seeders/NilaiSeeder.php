@@ -21,7 +21,7 @@ class NilaiSeeder extends Seeder
             ],
             [
                 'nama_murid' => 'Siti Aminah',
-                'kelas' => '7B',
+                'kelas' => '7A',
                 'nilai_mapel' => [
                     'Matematika' => 78,
                     'Bahasa Indonesia' => 90,
@@ -30,7 +30,7 @@ class NilaiSeeder extends Seeder
             ],
             [
                 'nama_murid' => 'Anton Budi',
-                'kelas' => '7B',
+                'kelas' => '7A',
                 'nilai_mapel' => [
                     'Matematika' => 88,
                     'Bahasa Indonesia' => 95,

@@ -22,7 +22,7 @@ class RiwayatKelasSeeder extends Seeder
 
         RiwayatKelas::create([
             'murid_id' => 3,
-            'kelas' => '7B',
+            'kelas' => '7A',
             'tanggal_naik_kelas' => '2022-07-01',
         ]);
     }

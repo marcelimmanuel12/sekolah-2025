@@ -2,6 +2,7 @@
 
 namespace App\Filament\Admin\Resources;
 
+use App\Enums\StatusMurid;
 use App\Filament\Admin\Resources\MuridResource\Pages;
 use App\Models\Murid;
 use Filament\Forms;
@@ -9,7 +10,6 @@ use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
 
 class MuridResource extends Resource
 {
@@ -23,7 +23,7 @@ class MuridResource extends Resource
             ->schema([
                 Forms\Components\TextInput::make('photo')
                     ->maxLength(255)
-                    ->default(null),
+                    ->nullable(),
 
                 Forms\Components\TextInput::make('nama')
                     ->required()
@@ -49,9 +49,12 @@ class MuridResource extends Resource
                     ->required()
                     ->maxLength(255),
 
-                Forms\Components\DatePicker::make('tanggal_lahir'),
+                Forms\Components\DatePicker::make('tanggal_lahir')
+                    ->required(),
 
-                Forms\Components\TextInput::make('status')
+                Forms\Components\Select::make('status')
+                    ->options(StatusMurid::getOptions())
+                    ->default(StatusMurid::AKTIF->value)
                     ->required(),
             ]);
     }
@@ -60,26 +63,19 @@ class MuridResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('photo')
-                    ->searchable(),
+                Tables\Columns\TextColumn::make('photo')->searchable(),
 
-                Tables\Columns\TextColumn::make('nama')
-                    ->searchable(),
+                Tables\Columns\TextColumn::make('nama')->searchable(),
 
-                Tables\Columns\TextColumn::make('email_murid')
-                    ->searchable(),
+                Tables\Columns\TextColumn::make('email_murid')->searchable(),
 
-                Tables\Columns\TextColumn::make('nisn')
-                    ->searchable(),
+                Tables\Columns\TextColumn::make('nisn')->searchable(),
 
                 Tables\Columns\TextColumn::make('jenis_kelamin'),
 
-                Tables\Columns\TextColumn::make('kelas')
-                    ->searchable(),
+                Tables\Columns\TextColumn::make('kelas')->searchable(),
 
-                Tables\Columns\TextColumn::make('tanggal_lahir')
-                    ->date()
-                    ->sortable(),
+                Tables\Columns\TextColumn::make('tanggal_lahir')->date()->sortable(),
 
                 Tables\Columns\TextColumn::make('status'),
 
@@ -99,6 +95,8 @@ class MuridResource extends Resource
                         'Laki-laki' => 'Laki-laki',
                         'Perempuan' => 'Perempuan',
                     ]),
+                Tables\Filters\SelectFilter::make('status')
+                    ->options(StatusMurid::getOptions()),
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),

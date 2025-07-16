@@ -45,6 +45,7 @@ class SimpleWidget extends StatsOverviewWidget
             Card::make('Rata-rata IPA', number_format($avgIPA, 2))
                 ->description('Diambil dari field nilai_mapel')
                 ->color('success'),
-        ];
+            ];
+        }
     }
-}
+
