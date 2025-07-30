@@ -12,7 +12,7 @@ class AntrianIjazahSeeder extends Seeder
     {
         AntrianIjazah::insert([
             [
-                'nama_murid' => 'Marcel Immanuel',
+                'nama_murid' => 'Marcel Immanuell',
                 'email_murid' => 'marcel@example.com',
                 'tanggal_antri' => Carbon::now()->subDays(3),
                 'status' => 'selesai',
